@@ -20,5 +20,9 @@ public class AnnotTestApplication {
 
 		AddressDelivery addressDelivery = context.getBean("addressDeliveryImpl", AddressDelivery.class);
 		System.out.println(addressDelivery.getCustomer());
+
+		Customer customerPrototype = (Customer) context.getBean("customer");
+		Customer customerPrototype2 = (Customer) context.getBean("customer");
+		System.out.println(customerPrototype.equals(customerPrototype2));
 	}
 }
